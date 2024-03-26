@@ -5,9 +5,10 @@ using CS_First_HTTP_Client;
 
 string baseAddress = "https://cat-fact.herokuapp.com";
 
-using var client = new HttpClient() { BaseAddress = new(baseAddress) };
+using var client = new HttpClient();
+client.BaseAddress = new(baseAddress);
 
-var request = new HttpRequestMessage(HttpMethod.Get, "/facts");
+var request = new HttpRequestMessage(HttpMethod.Get, "facts");
 
 var response = client.Send(request);
 
